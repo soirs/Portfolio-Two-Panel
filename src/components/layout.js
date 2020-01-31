@@ -1,51 +1,38 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import PropTypes from 'prop-types';
+import React from 'react';
+import Helmet from 'react-helmet';
+import { connect } from 'react-redux';
+import HelmetProps from '../utils/helmet';
+import About from './About';
+import DarkSwitch from './DarkSwitch';
+import './Layout.scss';
+import Links from './Links';
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
-import "./layout.css"
-
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+const Layout = ({ children, isDarkMode, dispatch }) => (
+  <>
+    <Helmet {...HelmetProps} />
+    <div className={('index', isDarkMode ? 'theme-dark' : 'theme-light')}>
+      <div className="main">{children}</div>
+      <div className="aside">
+        <div className="top">
+          <About />
+        </div>
+        <div className="bottom">
+          <DarkSwitch />
+          <Links />
+        </div>
       </div>
-    </>
-  )
-}
+    </div>
+  </>
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default connect(
+  state => ({
+    isDarkMode: state.app.isDarkMode,
+  }),
+  null,
+)(Layout);

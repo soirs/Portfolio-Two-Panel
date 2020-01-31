@@ -1,14 +1,31 @@
-import React from "react"
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import Layout from '../components/Layout';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+const ErrorPage = ({ data }) => (
+  <div className="template-wrapper">
+    <Layout>
+      <h2>
+        Hi, I'm
+        {' '}
+        <span className="bold">a 404 Error</span>
+        {' '}
+page
+      </h2>
+      <h3>
+        This means the page you are looking for wasn't found.
+        <br />
+      </h3>
+      <h3 className="bold">
+        <Link to="/">Let's go back to the home page!</Link>
+      </h3>
+    </Layout>
+  </div>
+);
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-)
+ErrorPage.propTypes = {
+  children: PropTypes.func,
+};
 
-export default NotFoundPage
+export default ErrorPage;

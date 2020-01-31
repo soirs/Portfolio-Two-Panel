@@ -1,34 +1,86 @@
+require('dotenv').config();
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: 'Frank Richard Semakula | Portfolio',
+    siteUrl: 'https://frankrs.dk/',
+    description:
+      'Frontend developer with a wide range of skills within web development.',
+    keywords:
+      'frontend developer, junior developer, portfolio, personal website',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-sass',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: 'Frank Richard Semakula',
+        short_name: 'FRS - Portfolio',
+        start_url: '/',
+        background_color: '#fff',
+        theme_color: '#fff',
+        display: 'standalone',
+        orientation: 'portrait',
+        icon: 'src/assets/favicons/favicon.png',
+        include_favicon: true,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        name: 'images',
+        path: `${__dirname}/src/assets/images/`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        // downloadLocal: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-124489759-1',
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // -v- Setting this parameter is optional
+        anonymize: true,
+        // -v- Setting this parameter is also optional
+        respectDNT: true,
+      },
+    },
+    // {
+    //   resolve: 'gatsby-plugin-offline',
+    //   options: {
+    //     globPatterns: ['**/*.{js,jsx,jpg,svg,html,css}'],
+    //   },
+    // },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: path.resolve(__dirname, 'src/assets/svg'),
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        test: /\.js$|\.jsx$/,
+        exclude: /(node_modules|.cache|public)/,
+        stages: ['develop'],
+        options: {
+          emitWarning: true,
+          failOnError: false,
+        },
+      },
+    },
   ],
-}
+};
