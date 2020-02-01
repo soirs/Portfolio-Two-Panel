@@ -1,0 +1,12 @@
+@media (max-width: 480px) {
+  .utility-linebreak {
+    display: block;
+  }
+}
+@include media(">tablet") {
+
+  .utility-linebreak {
+    display: none;
+  }
+  // font-size: 1.4rem;
+}

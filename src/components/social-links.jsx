@@ -73,7 +73,9 @@ const SocialLinks = () => {
         >
           GatsbyJS
         </a>
-        , full source code
+        ,
+        <br />
+        full source code
         {" "}
         <a
           href="https://github.com/soirs/portfolio"

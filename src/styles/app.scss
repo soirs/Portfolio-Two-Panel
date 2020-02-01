@@ -1,8 +1,13 @@
 // @import '~modern-normalize/modern-normalize.css';
-@import "~include-media/dist/_include-media.scss";
+// @import "~include-media/dist/_include-media.scss";
+@import "utils/include-media";
 
-@import "mixin";
+
 @import "variables";
+// need vars.. -v-
+@import "utils/utility-classes";
+
+@import "mixins";
 
 @import "base";
 @import "tooltip";

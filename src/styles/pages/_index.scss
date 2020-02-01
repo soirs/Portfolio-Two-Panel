@@ -1,5 +1,7 @@
 .index {
   &__greeting {
+    @include rf(22, 28);
+
     // filter: grayscale(80%);
   }
   &__introduction {
@@ -7,12 +9,10 @@
     line-height: 1.6;
     font-weight: 400;
 
-    @include media("<=xsmall") {
-      font-size: 2.8rem;
+    @include media("screen", "<=tablet") {
+      // @include rf(22, 45);
     }
 
-    @include media(">=medium", "<large") {
-      font-size: 3rem;
-    }
+
   }
 }

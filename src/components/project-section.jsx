@@ -10,12 +10,19 @@ const ProjectSection = () => (
         allContentfulProject {
           totalCount
           nodes {
-            title
-            slug
-            id
+            color
             description
-            url
             github
+            id
+            image {
+              file {
+                url
+              }
+            }
+            slug
+            stack
+            title
+            url
           }
         }
       }
@@ -25,12 +32,15 @@ const ProjectSection = () => (
         <div className="row">
           {data.allContentfulProject.nodes.map(node => (
             <ProjectUnit
-              id={node.id}
-              title={node.title}
+              color={node.color}
               description={node.description}
-              url={node.url}
-              slug={node.slug}
               github={node.github}
+              id={node.id}
+              image={node.image.file.url}
+              key={node.id}
+              slug={node.slug}
+              title={node.title}
+              url={node.url}
             />
           ))}
         </div>

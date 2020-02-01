@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable prettier/prettier */
 import React from "react";
 import Layout from "../components/layout";
@@ -7,13 +8,13 @@ const IndexPage = () => (
   <>
     <Layout>
       <h2 className="index__greeting">
-        Hi, I`m
+        Hi, I'm
         {' '}
-        <span className="text-bold">Frank</span>
+        <span className="text-bold">Frank Semakula</span>
       </h2>
 
       <h3 className="index__introduction text-bold">
-        I`m a frontend developer from Aarhus, Denmark.
+        I'm a frontend developer from Aarhus, Denmark.
         <br />
         I live for the experience.
       </h3>

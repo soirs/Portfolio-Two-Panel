@@ -6,7 +6,7 @@ import React from "react";
 import OutboundLink from "./outbound-link";
 
 const ProjectItem = props => {
-  const { id, url, title, description, github } = props;
+  const { color, id, image, key, url, title, description, github } = props;
 
   return (
     <div className="project-item col-xs-12 col-sm-6 col-md-3" id={id}>
@@ -14,16 +14,20 @@ const ProjectItem = props => {
         <OutboundLink to={url}>
           <div
             className="project-item__image"
-            style={
-              {
-                // backgroundImage: `url(${this.props.logo})`,
-                // backgroundColor: this.props.colour,
-              }
-            }
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundColor: color
+            }}
           />
         </OutboundLink>
       )}
-      {title && <div className="project-item__title text-bold">{title}</div>}
+
+      {title && (
+        <OutboundLink to={url}>
+          <div className="project-item__title text-bold">{title}</div>
+        </OutboundLink>
+      )}
+
       {description && (
         <div className="project-item__description">{description}</div>
       )}

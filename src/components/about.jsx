@@ -26,12 +26,17 @@ const About = () => (
           />
         </div>
         <article className="about__bio">
-          <h2>Hello world.</h2>
+          <h4>Hello world.</h4>
           <p>
             <span>
               I am currently looking for my next position!
               <br />
-              If you have a role that may suit, feel free to contact me
+              If you have a role that may suit, feel free to
+              {" "}
+              <br className="utility-linebreak" />
+              <a href="mailto:Hello@frankrs.dk?subject=Hello%20Frank!">
+                contact me
+              </a>
             </span>
             <p>
               I`m a Webdevelopment graduate who absoulutely loves the world of
@@ -43,29 +48,6 @@ const About = () => (
                 ❤️
               </span>
             </p>
-            <br />
-            <h3>Education.</h3>
-            <span>
-              Bachelor in Webdevelopment
-              <br />
-              <sup>─── 2018/2020 @ Business Academy Aarhus</sup>
-            </span>
-            <br />
-            <span>
-              Webdevelopment certificate
-              <br />
-              <sup>─── 2016/2017 @ Viden Djurs</sup>
-            </span>
-            <br />
-            <span>
-              AP degree in Marketing Management
-              {' '}
-              <small>&</small>
-              {' '}
-Innovation
-              <br />
-              <sup>─── 2013/2015 @ Business Academy Aarhus</sup>
-            </span>
           </p>
         </article>
       </div>

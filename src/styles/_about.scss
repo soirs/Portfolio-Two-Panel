@@ -30,7 +30,9 @@ $margin-bottom: 40px;
   &__bio {
     margin-bottom: $margin-bottom;
     line-height: 1.4;
-    font-size: 1.4rem;
+    @include rf(22, 28);
+
+    // font-size: 1.4rem;
   }
 
   @media only screen and (max-height: 700px) {
