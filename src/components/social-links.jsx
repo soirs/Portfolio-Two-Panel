@@ -60,7 +60,7 @@ const SocialLinks = () => {
       <div className="small">
         Built with
         {" "}
-        <span role="img" aria-label="love">
+        <span className="animatecss animated infinite jello delay-2s" role="img" aria-label="love">
           ❤️
         </span>
         {" "}

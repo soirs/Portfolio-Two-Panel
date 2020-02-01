@@ -6,7 +6,7 @@ import React from "react";
 import OutboundLink from "./outbound-link";
 
 const ProjectItem = props => {
-  const { color, id, image, key, url, title, description, github } = props;
+  const { color, id, image, url, title, description, github } = props;
 
   return (
     <div className="project-item col-xs-12 col-sm-6 col-md-3" id={id}>
@@ -54,11 +54,13 @@ const ProjectItem = props => {
 };
 
 ProjectItem.propTypes = {
-  id: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  github: PropTypes.string.isRequired
+  github: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
 };
 
 export default ProjectItem;

@@ -16,7 +16,7 @@ const IndexPage = () => (
       <h3 className="index__introduction text-bold">
         I'm a frontend developer from Aarhus, Denmark.
         <br />
-        I live for the experience.
+        I enjoy making experiences.
       </h3>
       <ProjectsSection />
     </Layout>

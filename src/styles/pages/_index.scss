@@ -1,8 +1,5 @@
 .index {
   &__greeting {
-    @include rf(22, 28);
-
-    // filter: grayscale(80%);
   }
   &__introduction {
     font-size: 2.4rem;
