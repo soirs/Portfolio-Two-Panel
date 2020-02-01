@@ -1,9 +1,9 @@
-import { graphql, StaticQuery } from 'gatsby';
-import React from 'react';
-import ProjectUnit from './ProjectUnit';
-import Section from './Section';
+import { graphql, StaticQuery } from "gatsby";
+import React from "react";
+import ProjectUnit from "./project-item";
+import Section from "./section";
 
-export default children => (
+const ProjectSection = () => (
   <StaticQuery
     query={graphql`
       query ProjectsSectionQuery {
@@ -38,3 +38,5 @@ export default children => (
     )}
   />
 );
+
+export default ProjectSection;

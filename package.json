@@ -11,12 +11,12 @@
     "clean": "gatsby clean && echo '💣Add node_modules to script?🧨' && rimraf .cache public && yarn upgrade",
     "dev": "gatsby develop",
     "develop": "gatsby develop",
-    "pretty-quick": "pretty-quick",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "lint": "npm run eslint && npm run stylelint",
+    "lint": "yarn stylelint && yarn eslint",
     "eslint": "eslint --fix 'src/**/*.{js,jsx}'",
+    "prettier": "prettier --write 'src/**/*.{js,jsx}'",
     "eslint-check": "eslint --print-config src/pages/index.jsx | eslint-config-prettier-check",
-    "stylelint": "stylelint 'src/styles/*.scss' --syntax scss",
+    "stylelint": "stylelint 'src/**/*.scss' --syntax scss",
     "serve": "gatsby serve",
     "start": "gatsby serve --port ${PORT:-3000}"
   },
@@ -39,6 +39,7 @@
     "gatsby-plugin-manifest": "^2.2.39",
     "gatsby-plugin-netlify": "^2.1.31",
     "gatsby-plugin-offline": "^3.0.32",
+    "gatsby-plugin-purgecss": "^4.0.1",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.1.27",
@@ -67,7 +68,6 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.9.0",
-    "eslint-config-stylelint": "^11.1.0",
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
@@ -75,19 +75,18 @@
     "feather-icons": "^4.21.0",
     "gatsby-plugin-eslint": "^2.0.8",
     "gatsby-plugin-google-analytics": "^2.0.18",
-    "netlify-cli": "^2.30.0",
+    "husky": "^4.2.1",
     "prettier": "^1.19.1",
     "prettier-eslint": "^9.0.1",
     "rimraf": "^3.0.0",
     "stylelint": "^13.0.0",
     "stylelint-config-prettier": "^8.0.1",
-    "stylelint-prettier": "^1.1.2",
-    "typescript": "3.3.3333"
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-prettier": "^1.1.2"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && yarn test",
-      "pre-push": "yarn test"
+      "pre-commit": "eslint"
     }
   },
   "keywords": [

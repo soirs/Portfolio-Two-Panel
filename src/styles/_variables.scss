@@ -1,0 +1,39 @@
+$font-europa: europa, Avenir, Helvetica, Arial, sans-serif;
+
+:root {
+  /* Layout */
+  --wrapperWidth: 1200px;
+  --headerHeight: 48px;
+  --gutter: 20px;
+  --columnCount: 12;
+  /* Media Queries */
+  --small: 767px;
+  --medium: 1023px;
+  /* Colors */
+  --colorBlack: #000;
+  --colorWhite: #fff;
+
+  /* Z Index Scale */
+  --zIndexHeader: 2;
+  --zIndexMenu: 3;
+  --zIndexHamburger: 4;
+
+  --mainColor: #000;
+  --mainColorLight: #ccc;
+  --mainBackground: #fff;
+  --sideColor: #a5a5a5;
+  --sideBackground: #000;
+  --mainContrast: #fff;
+  --borderCollie: #d8d8d8;
+  --borderColorDark: #3a3a3a;
+  --boxShadowColor: rgba(0, 0, 0, 0.3);
+}
+
+
+$breakpoints: (
+  xsmall: 480px,
+  small: 736px,
+  medium: 980px,
+  large: 1280px,
+  xlarge: 1800px,
+);

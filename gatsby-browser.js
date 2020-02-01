@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /**
  * Implement Gatsby's Browser APIs in this file.
  *
@@ -6,5 +7,5 @@
 
 // You can delete this file if you're not using it
 
-export { default as wrapRootElement } from './src/state/ReduxWrapper';
+import "./src/styles/app.scss";
 
