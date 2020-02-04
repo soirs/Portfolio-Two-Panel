@@ -6,7 +6,7 @@ import React from "react";
 import OutboundLink from "./outbound-link";
 
 const ProjectItem = props => {
-  const { color, id, image, url, title, description, github } = props;
+  const { color, id, stack, image, url, title, description, github } = props;
 
   return (
     <div className="project-item col-xs-12 col-sm-6 col-md-3" id={id}>
@@ -37,6 +37,9 @@ const ProjectItem = props => {
         url={node.url}
         slug={node.slug}
         space={node.url} */}
+
+      <ul className="project-item__stack" />
+      {stack && stack.map(item => <li>{item}</li>)}
       <div className="project-item__links">
         {url && (
           <OutboundLink to={url}>
@@ -59,6 +62,7 @@ ProjectItem.propTypes = {
   github: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  stack: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired
 };

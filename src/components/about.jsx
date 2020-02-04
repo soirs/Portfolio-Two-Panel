@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable prettier/prettier */
 import { graphql, StaticQuery } from "gatsby";
 import GatsbyImage from "gatsby-image";
@@ -39,11 +40,11 @@ const About = () => (
               </a>
             </span>
             <p>
-              I`m a Webdevelopment graduate who absoulutely loves the world of
+              I'm a Webdevelopment graduate who absoulutely loves the world of
               frontend development.
             </p>
             <p>
-              Take care.
+              Have a great one.
               <span role="img" aria-label="heart">
                 ❤️
               </span>
