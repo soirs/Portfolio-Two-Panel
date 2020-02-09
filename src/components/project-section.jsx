@@ -20,6 +20,7 @@ const ProjectSection = () => (
               }
             }
             stack
+            slug
             title
             url
           }
@@ -37,7 +38,7 @@ const ProjectSection = () => (
               id={node.id}
               image={node.image.file.url}
               key={node.id}
-              // slug={node.slug}
+              slug={node.slug}
               stack={node.stack}
               title={node.title}
               url={node.url}

@@ -39,16 +39,22 @@ const About = () => (
                 contact me
               </a>
             </span>
-            <p>
+            <br />
+            <br />
+            <span>
               I'm a Webdevelopment graduate who absoulutely loves the world of
               frontend development.
-            </p>
-            <p>
+            </span>
+            <br />
+            <br />
+            <span>
               Have a great one.
+              <br />
+              <br />
               <span role="img" aria-label="heart">
-                ❤️
+                🚀⭐️🔆
               </span>
-            </p>
+            </span>
           </p>
         </article>
       </div>

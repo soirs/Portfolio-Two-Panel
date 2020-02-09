@@ -1,3 +1,4 @@
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -43,12 +44,12 @@ const ProjectItem = props => {
       <div className="project-item__links">
         {url && (
           <OutboundLink to={url}>
-            <FontAwesomeIcon icon={faLink} />
+            <FontAwesomeIcon icon={faLink} size="xs" />
           </OutboundLink>
         )}
         {github && (
           <OutboundLink to={github}>
-            <FontAwesomeIcon icon={faGithub} />
+            <FontAwesomeIcon icon={faGithub} size="xs" />
           </OutboundLink>
         )}
       </div>
