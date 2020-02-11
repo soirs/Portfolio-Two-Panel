@@ -51,7 +51,7 @@ const About = () => (
               Have a great one.
               <br />
               <br />
-              <span role="img" aria-label="heart">
+              <span role="img" className="about__bio--emoji" aria-label="ending emoji's">
                 🚀⭐️🔆
               </span>
             </span>

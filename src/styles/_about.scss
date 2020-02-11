@@ -3,8 +3,6 @@ $margin-bottom: 40px;
 
 .about {
   color: var(--mainColorLight);
-  // max-width: $max-width;
-
   &__image {
     width: 180px;
     max-width: $max-width;
@@ -14,34 +12,36 @@ $margin-bottom: 40px;
     border-radius: 50%;
     overflow: hidden;
     filter: grayscale(100%);
-    transition: all 0.8s ease;
-    // transition: border .9s ease-in-out, transform .9s ease-in-out;
+    transition: all 0.8s ease, transform 1.2s ease .2s;
+    // transition: background-image 1s ease;
     margin-bottom: $margin-bottom;
     background-image: url(../assets/images/profileBackground2.jpg);
     background-size: cover;
     &:hover {
-      background-position: -30px;
+      background-position: -40px;
       transform: rotate(1deg) scale(1.1);
       border: 2px solid white;
       filter: grayscale(40%);
     }
   }
-
+  // about__image endß
   &__bio {
     margin-bottom: $margin-bottom;
     line-height: 1.4;
     @include rf(22, 28);
-
-    // font-size: 1.4rem;
+    &--emoji {
+      display: block;
+      text-align: center;
+    }
   }
 
+  // general media queries
   @media only screen and (max-height: 700px) {
     .about__image {
       width: 120px;
       height: 120px;
     }
   }
-
   @include media("<=small") {
     .about__bio {
       line-height: 2rem;
@@ -54,7 +54,7 @@ $margin-bottom: 40px;
     margin-bottom: 0;
     max-width: 100%;
 
-    .about__image {
+    &__image {
       margin: 0 auto $margin-bottom auto;
     }
 

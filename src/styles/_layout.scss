@@ -15,12 +15,15 @@ $aside-width: 35%;
 
   // Setting the width and padding sizes
   @include media(">=large") {
+    $main-width: -webkit-calc(100% - 358px);
+    $main-width: -moz-calc(100% - 358px);
     $main-width: calc(100% - 358px);
     $main-margin-right: 35%;
     $vertical-padding: 50px;
     $horizontal-padding: 8%;
 
     width: $main-width;
+    margin-left: 0;
     margin-right: $main-margin-right;
     padding: $vertical-padding $horizontal-padding $vertical-padding
       $horizontal-padding;

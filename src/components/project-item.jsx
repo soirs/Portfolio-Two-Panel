@@ -1,4 +1,3 @@
-import "@fortawesome/fontawesome-svg-core/styles.css";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,7 +39,7 @@ const ProjectItem = props => {
         space={node.url} */}
 
       <ul className="project-item__stack" />
-      {stack && stack.map(item => <li>{item}</li>)}
+      {stack && stack.map((item, index) => <li key={index}>{item}</li>)}
       <div className="project-item__links">
         {url && (
           <OutboundLink to={url}>
