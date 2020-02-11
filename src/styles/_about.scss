@@ -17,8 +17,9 @@ $margin-bottom: 40px;
     margin-bottom: $margin-bottom;
     background-image: url(../assets/images/profileBackground2.jpg);
     background-size: cover;
-    &:hover {
-      background-position: -40px;
+      background-position: 5px;
+      &:hover {
+      background-position: -50px -5px;
       transform: rotate(1deg) scale(1.1);
       border: 2px solid white;
       filter: grayscale(40%);
