@@ -6,8 +6,9 @@ const ErrorPage = () => (
   <>
     <Layout>
       <h2 className="four-oh-four__message">
-        Hi, I´m
-        <span className="text-bold">an 404 Error</span>
+        Hi, I'm
+{' '}
+<span className="text-bold">an 404 Error</span>
         page
       </h2>
       <h3>

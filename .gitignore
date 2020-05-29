@@ -55,7 +55,11 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+.env*
+
+# contentful data
+contentful-import-error-log*
+.contentful.json
 
 .DS_Store
 .cache/

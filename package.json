@@ -8,17 +8,16 @@
   "private": true,
   "scripts": {
     "build": "gatsby build",
-    "clean": "gatsby clean && echo '💣Add node_modules to script?🧨' && rimraf .cache public && yarn upgrade",
+    "clean": "gatsby clean && echo '💣Add node_modules to script as a full nuke?🧨' && rimraf .cache public && yarn upgrade",
     "dev": "gatsby develop",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "lint": "yarn stylelint && yarn eslint",
-    "eslint": "eslint --fix 'src/**/*.{js,jsx}'",
-    "prettier": "prettier --write 'src/**/*.{js,jsx}'",
-    "eslint-check": "eslint --print-config src/pages/index.jsx | eslint-config-prettier-check",
-    "stylelint": "stylelint 'src/**/*.scss' --syntax scss",
     "serve": "gatsby serve",
-    "start": "gatsby serve --port ${PORT:-3000}"
+    "start": "gatsby serve --port ${PORT:-3000}",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "lint": "yarn lint:js && yarn lint:css",
+    "prettier": "prettier --write 'src/**/*.{js,jsx}'",
+    "lint:js": "eslint --fix 'src/**/*.{js,jsx}'",
+    "lint:css": "stylelint 'src/**/*.scss'"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
@@ -27,6 +26,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "animate.css": "^3.7.2",
     "animejs": "^3.0.1",
+    "chalk": "^3.0.0",
     "classnames": "^2.2.6",
     "classnames-loader": "^2.1.0",
     "contentful": "^7.13.1",
@@ -51,6 +51,7 @@
     "global": "^4.4.0",
     "history": "^4.9.0",
     "include-media": "^1.4.9",
+    "inquirer": "^7.0.4",
     "lodash": "^4.17.15",
     "modern-normalize": "^0.6.0",
     "node-sass": "^4.13.1",
@@ -61,8 +62,7 @@
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.1",
     "redux": "^4.0.4",
-    "source-map-explorer": "^1.8.0",
-    "stylelint-scss": "^3.13.0"
+    "source-map-explorer": "^1.8.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
@@ -82,12 +82,14 @@
     "rimraf": "^3.0.0",
     "stylelint": "^13.0.0",
     "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-sass-guidelines": "^7.0.0",
     "stylelint-config-standard": "^19.0.0",
-    "stylelint-prettier": "^1.1.2"
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.14.2"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "eslint"
+      "pre-commit": "lint:js"
     }
   },
   "keywords": [
