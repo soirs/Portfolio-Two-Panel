@@ -1,7 +1,7 @@
-import { graphql, StaticQuery } from "gatsby";
-import React from "react";
-import ProjectUnit from "./project-item";
-import Section from "./section";
+import { graphql, StaticQuery } from 'gatsby';
+import React from 'react';
+import ProjectUnit from './ProjectItem';
+import Section from './Section';
 
 const ProjectSection = () => (
   <StaticQuery
@@ -27,10 +27,10 @@ const ProjectSection = () => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <Section title="Here's some of the things I've had fun with">
         <div className="row">
-          {data.allContentfulProject.nodes.map(node => (
+          {data.allContentfulProject.nodes.map((node) => (
             <ProjectUnit
               color={node.color}
               description={node.description}

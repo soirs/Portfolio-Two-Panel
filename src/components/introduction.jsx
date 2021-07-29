@@ -1,7 +1,5 @@
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable prettier/prettier */
-import React from "react";
-import { graphql, StaticQuery } from "gatsby";
+import React from 'react';
+import { graphql, StaticQuery } from 'gatsby';
 
 const Introduction = () => (
   <StaticQuery
@@ -18,7 +16,7 @@ const Introduction = () => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const {
         greeting,
         name,

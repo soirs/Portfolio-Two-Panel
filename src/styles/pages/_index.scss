@@ -1,13 +1,13 @@
 .index {
-  &__greeting {
-  }
+
   &__introduction {
     font-size: 2.4rem;
     line-height: 1;
     font-weight: 400;
     font-family: $font-europa, "HelveticaNeue-Light", "Helvetica Neue Light",
-    "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     white-space: pre-wrap;
+
     @include media("screen", "<=tablet") {
       // @include rf(22, 45);
     }

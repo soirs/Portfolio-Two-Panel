@@ -1,9 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable prettier/prettier */
-import { graphql, StaticQuery } from "gatsby";
-import React from "react";
-import AboutBio from "./about-bio";
-import AboutImage from "./about-profile-image";
+import { graphql, StaticQuery } from 'gatsby';
+import React from 'react';
+import AboutBio from './AboutBio';
+import AboutImage from './AboutProfileImage';
 
 const About = () => (
   <StaticQuery
@@ -26,7 +25,7 @@ const About = () => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const {
         header,
         currentlyLookingMessage,

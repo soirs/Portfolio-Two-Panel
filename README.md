@@ -6,10 +6,6 @@
 ##### Todo
 
 Purge comments
-Fix Prettier
-
-# How to use
-
 ### Install
 
 ```

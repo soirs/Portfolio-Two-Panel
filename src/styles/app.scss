@@ -1,7 +1,8 @@
+@use "sass:math";
+
 // @import '~modern-normalize/modern-normalize.css';
-// @import "~include-media/dist/_include-media.scss";
+
 @import "utils/include-media";
-@import "~animate.css/animate.min.css";
 
 @import "variables";
 // need vars.. -v-
@@ -10,17 +11,14 @@
 @import "mixins";
 
 @import "base";
-@import "tooltip";
 
 @import "social-links";
-////
+
 // larger components
 @import "layout";
 @import "about";
 @import "project-item";
 @import "section";
-// @import "aside";
-// @import "aside";
 
 @import "pages/index";
 @import "pages/404";

@@ -23,6 +23,7 @@
       }
     }
   }
+
   a {
     color: inherit;
     transition: all 0.6s ease;
@@ -32,10 +33,15 @@
     }
   }
 
-  .small {
+  .text-small {
     font-size: 1.3rem;
     transition: all 0.6s ease;
-    -webkit-transition: all 0.6s ease; /* Fade to color for Chrome and Safari */
+    -webkit-transition: all 0.6s ease;
+    /* Fade to color for Chrome and Safari */
     cursor: normal;
   }
+}
+
+.social-links__source {
+  display: block;
 }

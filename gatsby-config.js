@@ -1,60 +1,66 @@
-require("dotenv").config();
-const path = require("path");
+/* eslint-disable no-undef */
+require('dotenv').config();
+const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: "Frank Richard Semakula | Portfolio",
-    siteUrl: "https://frankrs.dk/",
+    title: 'Frank Richard Semakula | Portfolio',
+    siteUrl: 'https://frankrs.dk/',
     description:
-      "Frontend developer with a wide range of skills within web development.",
+      'Frontend developer with a wide range of skills within web development and business.',
     keywords:
-      "frontend developer, junior developer, portfolio, personal website"
+      'frontend developer, junior developer, portfolio, personal website',
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-sass",
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-sass',
       options: {
-        name: "Frank Richard Semakula",
-        short_name: "FRS - Portfolio",
-        start_url: "/",
-        background_color: "#fff",
-        theme_color: "#fff",
-        display: "standalone",
-        orientation: "portrait",
-        icon: "src/assets/favicons/favicon.png",
-        include_favicon: true
-      }
+        implementation: require('sass'),
+      },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "images",
-        path: `${__dirname}/src/assets/images/`
-      }
+        name: 'Frank Richard Semakula',
+        short_name: 'FRS - Portfolio',
+        start_url: '/',
+        background_color: '#fff',
+        theme_color: '#fff',
+        display: 'standalone',
+        orientation: 'portrait',
+        icon: 'src/assets/favicons/favicon.png',
+        include_favicon: true,
+      },
     },
     {
-      resolve: "gatsby-source-contentful",
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/assets/images/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         // downloadLocal: true,
-      }
+      },
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "UA-124489759-1",
+        trackingId: 'UA-124489759-1',
         // Puts tracking script in the head instead of the body
         head: false,
         // -v- Setting this parameter is optional
         anonymize: true,
         // -v- Setting this parameter is also optional
-        respectDNT: true
-      }
+        respectDNT: true,
+      },
     },
     // {
     //   resolve: 'gatsby-plugin-offline',
@@ -63,35 +69,24 @@ module.exports = {
     //   },
     // },
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: path.resolve(__dirname, "src/assets/svg")
-        }
-      }
+          include: path.resolve(__dirname, 'src/assets/svg'),
+        },
+      },
     },
     {
-      resolve: "gatsby-plugin-eslint",
+      resolve: 'gatsby-plugin-eslint',
       options: {
         test: /\.js$|\.jsx$/,
         exclude: /(node_modules|.cache|public)/,
-        stages: ["develop"],
+        stages: ['develop'],
         options: {
           emitWarning: true,
-          failOnError: false
-        }
-      }
-    }
-    // {
-    //   resolve: `gatsby-plugin-purgecss`,
-    //   options: {
-    //     printRejected: true, // Print removed selectors and processed file names
-    //     develop: true, // Enable while using `gatsby develop`
-    //     // tailwind: true, // Enable tailwindcss support
-    //     whitelist: [''], // Don't remove this selector
-    //     // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-    //     // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
-    //   }
-    // }
-  ]
+          failOnError: false,
+        },
+      },
+    },
+  ],
 };

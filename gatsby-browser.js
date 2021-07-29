@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 /**
  * Implement Gatsby's Browser APIs in this file.
  *
@@ -7,5 +6,4 @@
 
 // You can delete this file if you're not using it
 
-import "./src/styles/app.scss";
-
+import './src/styles/app.scss';

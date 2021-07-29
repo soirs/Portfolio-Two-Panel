@@ -8,7 +8,7 @@
     "stylelint-scss"
   ],
   "rules": {
-    "prettier/prettier": true
+    "prettier/prettier": false
   },
   "defaultSeverity": "warning"
 }

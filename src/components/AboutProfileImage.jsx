@@ -1,6 +1,6 @@
-import { graphql, StaticQuery } from "gatsby";
-import GatsbyImage from "gatsby-image";
-import React from "react";
+import { graphql, StaticQuery } from 'gatsby';
+import GatsbyImage from 'gatsby-image';
+import React from 'react';
 
 const AboutImage = () => (
   <StaticQuery
@@ -15,7 +15,7 @@ const AboutImage = () => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <div className="about__image">
         <GatsbyImage
           title="Frank Richard Semakula"

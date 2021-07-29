@@ -1,9 +1,6 @@
 .four-oh-four {
-  &__greeting {
-    // filter: grayscale(80%);
-  }
+
   &__message {
-    font-size: 2.4rem;
     line-height: 1.6;
     font-weight: 400;
 
@@ -15,9 +12,10 @@
       font-size: 3rem;
     }
   }
+
   &__redirect {
     //// refactor this
     // tempoary solution
-    @extend .four-oh-four__message;
+    margin: 12px 0;
   }
 }
