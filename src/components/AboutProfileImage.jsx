@@ -1,29 +1,30 @@
 import { graphql, StaticQuery } from 'gatsby';
-import GatsbyImage from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 const AboutImage = () => (
   <StaticQuery
     query={graphql`
       query {
-        Avatar: file(relativePath: { eq: "franksemakula.png" }) {
+        avatar: file(relativePath: { eq: "franksemakula.png" }) {
           childImageSharp {
-            fluid(maxWidth: 180, maxHeight: 180) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData
           }
         }
       }
     `}
-    render={(data) => (
-      <div className="about__image">
-        <GatsbyImage
-          title="Frank Richard Semakula"
-          alt="Frank Richard Semakula"
-          fluid={data.Avatar.childImageSharp.fluid}
-        />
-      </div>
-    )}
+    render={(data) => {
+      const images = getImage(data.avatar);
+      return (
+        <div className="about__image">
+          <GatsbyImage
+            image={images}
+            title="Frank Richard Semakula"
+            alt="Frank Richard Semakula"
+          />
+        </div>
+      );
+    }}
   />
 );
 
