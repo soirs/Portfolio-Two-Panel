@@ -3,8 +3,6 @@ import React from 'react';
 
 const OutboundLink = ({ to, children }) => (
   <a
-      // {...props}
-      // className={('s', props.classname)}
     href={to}
     target="_blank"
     rel="noopener noreferrer"
