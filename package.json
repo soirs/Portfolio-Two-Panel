@@ -33,7 +33,7 @@
     "dotenv": "^10.0.0",
     "eslint-loader": "^4.0.2",
     "flexboxgrid": "^6.3.1",
-    "gatsby": "^3.10.2",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^3.10.0",
     "gatsby-plugin-config": "^1.0.7",
     "gatsby-plugin-image": "^1.10.1",
